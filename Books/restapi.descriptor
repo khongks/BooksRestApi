@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:restapiDescriptor xmlns="http://com.ibm.etools.mft.descriptor.base" xmlns:ns2="http://com.ibm.etools.mft.descriptor.restapi" definitionType="openapi_3" definitionFile="openapi.json" implementation="gen/Books.msgflow" https="false" definitionWithExtRef="false" faultFormat="JSON">
+    <ns2:operations>
+        <ns2:operation name="createBook" implementation="createBook.subflow"/>
+        <ns2:operation name="deleteById" implementation="deleteById.subflow"/>
+        <ns2:operation name="getBookById" implementation="getBookById.subflow"/>
+        <ns2:operation name="listBooks" implementation="listBooks.subflow"/>
+        <ns2:operation name="updateBookById" implementation="updateBookById.subflow"/>
+    </ns2:operations>
+    <ns2:errorHandlers/>
+</ns2:restapiDescriptor>
