@@ -2,12 +2,12 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Books",
-    "version": "1.0.0",
+    "version": "1.0",
     "description": "Books"
   },
   "servers": [
     {
-      "url": "/api/v1"
+      "url": "/sample"
     }
   ],
   "x-ibm-configuration": {},
@@ -141,6 +141,9 @@
           "id": {
             "type": "integer"
           },
+          "title": {
+            "type": "string"
+          },
           "isbn": {
             "type": "string"
           },
@@ -178,5 +181,10 @@
         ]
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "Books"
+    }
+  ]
 }
