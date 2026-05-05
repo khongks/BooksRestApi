@@ -10,119 +10,110 @@ CREATE COMPUTE MODULE listBooks_Compute
 		
 		-- Create the JSON response array
 		CREATE FIELD OutputRoot.JSON.Data IDENTITY (JSON.Array)Data;
-		DECLARE refBook REFERENCE TO OutputRoot.JSON.Data.Item;
+		DECLARE list REFERENCE TO OutputRoot.JSON.Data;
 				
-		-- Populate 10 "real" sample books
+				
+		-- Populate 10 "real" sample books with Titles
 		
 		-- Book 1
-		CREATE LASTCHILD OF OutputRoot.JSON.Data.Item AS refBook TYPE NameValue NAME 'Item';
-		SET refBook.id = 1;
-		SET refBook.title = 'The Great Gatsby';
-		SET refBook.isbn = '978-0743273565';
-		SET refBook.author = 'F. Scott Fitzgerald';
-		SET refBook.published = '1925-04-10';
-		SET refBook.format = 'Hardcover';
-		SET refBook.language = 'English';
-		SET refBook.pages = 180;
+		SET list.Item[1].id = 1;
+		SET list.Item[1].title = 'The Great Gatsby';
+		SET list.Item[1].isbn = '978-0743273565';
+		SET list.Item[1].author = 'F. Scott Fitzgerald';
+		SET list.Item[1].published = '1925-04-10';
+		SET list.Item[1].format = 'Hardcover';
+		SET list.Item[1].language = 'English';
+		SET list.Item[1].pages = 180;
 		
 		-- Book 2
-		CREATE LASTCHILD OF OutputRoot.JSON.Data.Item AS refBook TYPE NameValue NAME 'Item';
-		SET refBook.id = 2;
-		SET refBook.title = '1984';
-		SET refBook.isbn = '978-0451524935';
-		SET refBook.author = 'George Orwell';
-		SET refBook.published = '1949-06-08';
-		SET refBook.format = 'Paperback';
-		SET refBook.language = 'English';
-		SET refBook.pages = 328;
+		SET list.Item[2].id = 2;
+		SET list.Item[2].title = '1984';
+		SET list.Item[2].isbn = '978-0451524935';
+		SET list.Item[2].author = 'George Orwell';
+		SET list.Item[2].published = '1949-06-08';
+		SET list.Item[2].format = 'Paperback';
+		SET list.Item[2].language = 'English';
+		SET list.Item[2].pages = 328;
 		
 		-- Book 3
-		CREATE LASTCHILD OF OutputRoot.JSON.Data.Item AS refBook TYPE NameValue NAME 'Item';
-		SET refBook.id = 3;
-		SET refBook.title = 'To Kill a Mockingbird';
-		SET refBook.isbn = '978-0061120084';
-		SET refBook.author = 'Harper Lee';
-		SET refBook.published = '1960-07-11';
-		SET refBook.format = 'Hardcover';
-		SET refBook.language = 'English';
-		SET refBook.pages = 281;
+		SET list.Item[3].id = 3;
+		SET list.Item[3].title = 'To Kill a Mockingbird';
+		SET list.Item[3].isbn = '978-0061120084';
+		SET list.Item[3].author = 'Harper Lee';
+		SET list.Item[3].published = '1960-07-11';
+		SET list.Item[3].format = 'Hardcover';
+		SET list.Item[3].language = 'English';
+		SET list.Item[3].pages = 281;
 		
 		-- Book 4
-		CREATE LASTCHILD OF OutputRoot.JSON.Data.Item AS refBook TYPE NameValue NAME 'Item';
-		SET refBook.id = 4;
-		SET refBook.title = 'Pride and Prejudice';
-		SET refBook.isbn = '978-0141439518';
-		SET refBook.author = 'Jane Austen';
-		SET refBook.published = '1813-01-28';
-		SET refBook.format = 'Paperback';
-		SET refBook.language = 'English';
-		SET refBook.pages = 432;
+		SET list.Item[4].id = 4;
+		SET list.Item[4].title = 'Pride and Prejudice';
+		SET list.Item[4].isbn = '978-0141439518';
+		SET list.Item[4].author = 'Jane Austen';
+		SET list.Item[4].published = '1813-01-28';
+		SET list.Item[4].format = 'Paperback';
+		SET list.Item[4].language = 'English';
+		SET list.Item[4].pages = 432;
 		
 		-- Book 5
-		CREATE LASTCHILD OF OutputRoot.JSON.Data.Item AS refBook TYPE NameValue NAME 'Item';
-		SET refBook.id = 5;
-		SET refBook.title = 'The Catcher in the Rye';
-		SET refBook.isbn = '978-0316769488';
-		SET refBook.author = 'J.D. Salinger';
-		SET refBook.published = '1951-07-16';
-		SET refBook.format = 'Hardcover';
-		SET refBook.language = 'English';
-		SET refBook.pages = 234;
+		SET list.Item[5].id = 5;
+		SET list.Item[5].title = 'The Catcher in the Rye';
+		SET list.Item[5].isbn = '978-0316769488';
+		SET list.Item[5].author = 'J.D. Salinger';
+		SET list.Item[5].published = '1951-07-16';
+		SET list.Item[5].format = 'Hardcover';
+		SET list.Item[5].language = 'English';
+		SET list.Item[5].pages = 234;
 		
 		-- Book 6
-		CREATE LASTCHILD OF OutputRoot.JSON.Data.Item AS refBook TYPE NameValue NAME 'Item';
-		SET refBook.id = 6;
-		SET refBook.title = 'The Hobbit';
-		SET refBook.isbn = '978-0544003415';
-		SET refBook.author = 'J.R.R. Tolkien';
-		SET refBook.published = '1937-09-21';
-		SET refBook.format = 'Paperback';
-		SET refBook.language = 'English';
-		SET refBook.pages = 310;
+		SET list.Item[6].id = 6;
+		SET list.Item[6].title = 'The Hobbit';
+		SET list.Item[6].isbn = '978-0544003415';
+		SET list.Item[6].author = 'J.R.R. Tolkien';
+		SET list.Item[6].published = '1937-09-21';
+		SET list.Item[6].format = 'Paperback';
+		SET list.Item[6].language = 'English';
+		SET list.Item[6].pages = 310;
 		
 		-- Book 7
-		CREATE LASTCHILD OF OutputRoot.JSON.Data.Item AS refBook TYPE NameValue NAME 'Item';
-		SET refBook.id = 7;
-		SET refBook.title = 'The Fellowship of the Ring';
-		SET refBook.isbn = '978-0345339706';
-		SET refBook.author = 'J.R.R. Tolkien';
-		SET refBook.published = '1954-07-29';
-		SET refBook.format = 'Hardcover';
-		SET refBook.language = 'English';
-		SET refBook.pages = 423;
+		SET list.Item[7].id = 7;
+		SET list.Item[7].title = 'The Fellowship of the Ring';
+		SET list.Item[7].isbn = '978-0345339706';
+		SET list.Item[7].author = 'J.R.R. Tolkien';
+		SET list.Item[7].published = '1954-07-29';
+		SET list.Item[7].format = 'Hardcover';
+		SET list.Item[7].language = 'English';
+		SET list.Item[7].pages = 423;
 		
 		-- Book 8
-		CREATE LASTCHILD OF OutputRoot.JSON.Data.Item AS refBook TYPE NameValue NAME 'Item';
-		SET refBook.id = 8;
-		SET refBook.title = 'One Hundred Years of Solitude';
-		SET refBook.isbn = '978-0143039433';
-		SET refBook.author = 'Gabriel García Márquez';
-		SET refBook.published = '1967-05-30';
-		SET refBook.format = 'Paperback';
-		SET refBook.language = 'Spanish';
-		SET refBook.pages = 417;
+		SET list.Item[8].id = 8;
+		SET list.Item[8].title = 'One Hundred Years of Solitude';
+		SET list.Item[8].isbn = '978-0143039433';
+		SET list.Item[8].author = 'Gabriel García Márquez';
+		SET list.Item[8].published = '1967-05-30';
+		SET list.Item[8].format = 'Paperback';
+		SET list.Item[8].language = 'Spanish';
+		SET list.Item[8].pages = 417;
 		
 		-- Book 9
-		CREATE LASTCHILD OF OutputRoot.JSON.Data.Item AS refBook TYPE NameValue NAME 'Item';
-		SET refBook.id = 9;
-		SET refBook.title = 'The Da Vinci Code';
-		SET refBook.isbn = '978-0307474278';
-		SET refBook.author = 'Dan Brown';
-		SET refBook.published = '2003-03-18';
-		SET refBook.format = 'E-book';
-		SET refBook.language = 'English';
-		SET refBook.pages = 689;
+		SET list.Item[9].id = 9;
+		SET list.Item[9].title = 'The Da Vinci Code';
+		SET list.Item[9].isbn = '978-0307474278';
+		SET list.Item[9].author = 'Dan Brown';
+		SET list.Item[9].published = '2003-03-18';
+		SET list.Item[9].format = 'E-book';
+		SET list.Item[9].language = 'English';
+		SET list.Item[9].pages = 689;
 		
 		-- Book 10
-		CREATE LASTCHILD OF OutputRoot.JSON.Data.Item AS refBook TYPE NameValue NAME 'Item';
-		SET refBook.id = 10;
-		SET refBook.title = 'Crime and Punishment';
-		SET refBook.isbn = '978-0679783268';
-		SET refBook.author = 'Fyodor Dostoevsky';
-		SET refBook.published = '1866-01-01';
-		SET refBook.format = 'Hardcover';
-		SET refBook.language = 'Russian';
-		SET refBook.pages = 671;
+		SET list.Item[10].id = 10;
+		SET list.Item[10].title = 'Crime and Punishment';
+		SET list.Item[10].isbn = '978-0679783268';
+		SET list.Item[10].author = 'Fyodor Dostoevsky';
+		SET list.Item[10].published = '1866-01-01';
+		SET list.Item[10].format = 'Hardcover';
+		SET list.Item[10].language = 'Russian';
+		SET list.Item[10].pages = 671;
 
 		RETURN TRUE;
 	END;
