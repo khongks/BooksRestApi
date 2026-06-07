@@ -1,0 +1,15 @@
+
+================================================================================
+ERROR LOGGED: 2026-06-07T15:48:01.525Z
+================================================================================
+Error Name: Error
+Error Message: Connection failed for 'server02': fetch failed
+
+Stack Trace:
+Error: Connection failed for 'server02': fetch failed
+    at $lr (file:///Users/kskhong/.nvm/versions/node/v22.22.0/lib/node_modules/bobshell/bundle/bob.js:3480:10291)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async zwe.connect (file:///Users/kskhong/.nvm/versions/node/v22.22.0/lib/node_modules/bobshell/bundle/bob.js:3480:13137)
+    at async file:///Users/kskhong/.nvm/versions/node/v22.22.0/lib/node_modules/bobshell/bundle/bob.js:3480:17293
+================================================================================
+
